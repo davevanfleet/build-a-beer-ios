@@ -11,9 +11,30 @@
 		669EF9912BEAB1930071D6F8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669EF9902BEAB1930071D6F8 /* ContentView.swift */; };
 		669EF9932BEAB19D0071D6F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 669EF9922BEAB19D0071D6F8 /* Assets.xcassets */; };
 		669EF9962BEAB19D0071D6F8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 669EF9952BEAB19D0071D6F8 /* Preview Assets.xcassets */; };
-		669EF9A02BEAB19E0071D6F8 /* craftbrew_designer_swiftuiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669EF99F2BEAB19E0071D6F8 /* craftbrew_designer_swiftuiTests.swift */; };
+		669EF9A02BEAB19E0071D6F8 /* SpecificGravityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669EF99F2BEAB19E0071D6F8 /* SpecificGravityTests.swift */; };
 		669EF9AA2BEAB19E0071D6F8 /* craftbrew_designer_swiftuiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669EF9A92BEAB19E0071D6F8 /* craftbrew_designer_swiftuiUITests.swift */; };
 		669EF9AC2BEAB19E0071D6F8 /* craftbrew_designer_swiftuiUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669EF9AB2BEAB19E0071D6F8 /* craftbrew_designer_swiftuiUITestsLaunchTests.swift */; };
+		669EF9B92BEABBC80071D6F8 /* DesignView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669EF9B82BEABBC80071D6F8 /* DesignView.swift */; };
+		669EF9BB2BECF2C40071D6F8 /* SpecificGravity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669EF9BA2BECF2C40071D6F8 /* SpecificGravity.swift */; };
+		669EF9BE2BECF9B20071D6F8 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669EF9BD2BECF9B20071D6F8 /* Color.swift */; };
+		669EF9C22BECFA2F0071D6F8 /* Abv.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669EF9C12BECFA2F0071D6F8 /* Abv.swift */; };
+		669EF9C92BED06010071D6F8 /* Bitterness.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669EF9C82BED06010071D6F8 /* Bitterness.swift */; };
+		669EF9CB2BED07900071D6F8 /* Fixtures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669EF9CA2BED07900071D6F8 /* Fixtures.swift */; };
+		669EF9CD2BED07E20071D6F8 /* ColorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669EF9CC2BED07E20071D6F8 /* ColorTests.swift */; };
+		669EF9D02BED08540071D6F8 /* AbvTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669EF9CF2BED08540071D6F8 /* AbvTests.swift */; };
+		669EF9D22BED08AD0071D6F8 /* BitternessTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669EF9D12BED08AD0071D6F8 /* BitternessTests.swift */; };
+		669EF9D62BED11150071D6F8 /* BuildFromStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669EF9D52BED11150071D6F8 /* BuildFromStyle.swift */; };
+		669EF9D92BED157A0071D6F8 /* DesignHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669EF9D82BED157A0071D6F8 /* DesignHomeView.swift */; };
+		669EF9DB2BED1EC10071D6F8 /* BuildFromRecipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669EF9DA2BED1EC10071D6F8 /* BuildFromRecipe.swift */; };
+		669EF9DF2BED1F5E0071D6F8 /* RecipesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669EF9DE2BED1F5E0071D6F8 /* RecipesView.swift */; };
+		669EF9E22BED1F880071D6F8 /* ExploreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669EF9E12BED1F880071D6F8 /* ExploreView.swift */; };
+		669EF9E52BED1FAD0071D6F8 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669EF9E42BED1FAD0071D6F8 /* SettingsView.swift */; };
+		669EF9E82BED563C0071D6F8 /* Grain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669EF9E72BED563C0071D6F8 /* Grain.swift */; };
+		669EF9EA2BED56570071D6F8 /* Hop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669EF9E92BED56570071D6F8 /* Hop.swift */; };
+		669EF9EC2BED567B0071D6F8 /* Yeast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669EF9EB2BED567B0071D6F8 /* Yeast.swift */; };
+		669EF9EE2BED56950071D6F8 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669EF9ED2BED56950071D6F8 /* Recipe.swift */; };
+		669EF9F42BED75460071D6F8 /* DesignHomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669EF9F32BED75460071D6F8 /* DesignHomeViewModel.swift */; };
+		669EF9F62BED75710071D6F8 /* BeerStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669EF9F52BED75710071D6F8 /* BeerStyle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,10 +61,33 @@
 		669EF9922BEAB19D0071D6F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		669EF9952BEAB19D0071D6F8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		669EF99B2BEAB19E0071D6F8 /* craftbrew-designer-swiftuiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "craftbrew-designer-swiftuiTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		669EF99F2BEAB19E0071D6F8 /* craftbrew_designer_swiftuiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = craftbrew_designer_swiftuiTests.swift; sourceTree = "<group>"; };
+		669EF99F2BEAB19E0071D6F8 /* SpecificGravityTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecificGravityTests.swift; sourceTree = "<group>"; };
 		669EF9A52BEAB19E0071D6F8 /* craftbrew-designer-swiftuiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "craftbrew-designer-swiftuiUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		669EF9A92BEAB19E0071D6F8 /* craftbrew_designer_swiftuiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = craftbrew_designer_swiftuiUITests.swift; sourceTree = "<group>"; };
 		669EF9AB2BEAB19E0071D6F8 /* craftbrew_designer_swiftuiUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = craftbrew_designer_swiftuiUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		669EF9B82BEABBC80071D6F8 /* DesignView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignView.swift; sourceTree = "<group>"; };
+		669EF9BA2BECF2C40071D6F8 /* SpecificGravity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecificGravity.swift; sourceTree = "<group>"; };
+		669EF9BD2BECF9B20071D6F8 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		669EF9C12BECFA2F0071D6F8 /* Abv.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Abv.swift; sourceTree = "<group>"; };
+		669EF9C82BED06010071D6F8 /* Bitterness.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bitterness.swift; sourceTree = "<group>"; };
+		669EF9CA2BED07900071D6F8 /* Fixtures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fixtures.swift; sourceTree = "<group>"; };
+		669EF9CC2BED07E20071D6F8 /* ColorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorTests.swift; sourceTree = "<group>"; };
+		669EF9CF2BED08540071D6F8 /* AbvTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbvTests.swift; sourceTree = "<group>"; };
+		669EF9D12BED08AD0071D6F8 /* BitternessTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitternessTests.swift; sourceTree = "<group>"; };
+		669EF9D52BED11150071D6F8 /* BuildFromStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildFromStyle.swift; sourceTree = "<group>"; };
+		669EF9D82BED157A0071D6F8 /* DesignHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignHomeView.swift; sourceTree = "<group>"; };
+		669EF9DA2BED1EC10071D6F8 /* BuildFromRecipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildFromRecipe.swift; sourceTree = "<group>"; };
+		669EF9DE2BED1F5E0071D6F8 /* RecipesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesView.swift; sourceTree = "<group>"; };
+		669EF9E12BED1F880071D6F8 /* ExploreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreView.swift; sourceTree = "<group>"; };
+		669EF9E42BED1FAD0071D6F8 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		669EF9E72BED563C0071D6F8 /* Grain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grain.swift; sourceTree = "<group>"; };
+		669EF9E92BED56570071D6F8 /* Hop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hop.swift; sourceTree = "<group>"; };
+		669EF9EB2BED567B0071D6F8 /* Yeast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Yeast.swift; sourceTree = "<group>"; };
+		669EF9ED2BED56950071D6F8 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
+		669EF9F12BED62480071D6F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		669EF9F32BED75460071D6F8 /* DesignHomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignHomeViewModel.swift; sourceTree = "<group>"; };
+		669EF9F52BED75710071D6F8 /* BeerStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerStyle.swift; sourceTree = "<group>"; };
+		66C829F02BEE65D40047205E /* craftbrew-designer-swiftui.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "craftbrew-designer-swiftui.entitlements"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +138,12 @@
 		669EF98D2BEAB1930071D6F8 /* craftbrew-designer-swiftui */ = {
 			isa = PBXGroup;
 			children = (
+				66C829F02BEE65D40047205E /* craftbrew-designer-swiftui.entitlements */,
+				669EF9F22BED75220071D6F8 /* ViewModel */,
+				669EF9F12BED62480071D6F8 /* Info.plist */,
+				669EF9E62BED562C0071D6F8 /* Model */,
+				669EF9D72BED15510071D6F8 /* View */,
+				669EF9BC2BECF98B0071D6F8 /* Calculators */,
 				669EF98E2BEAB1930071D6F8 /* craftbrew_designer_swiftuiApp.swift */,
 				669EF9902BEAB1930071D6F8 /* ContentView.swift */,
 				669EF9922BEAB19D0071D6F8 /* Assets.xcassets */,
@@ -113,7 +163,8 @@
 		669EF99E2BEAB19E0071D6F8 /* craftbrew-designer-swiftuiTests */ = {
 			isa = PBXGroup;
 			children = (
-				669EF99F2BEAB19E0071D6F8 /* craftbrew_designer_swiftuiTests.swift */,
+				669EF9CE2BED08360071D6F8 /* Calculators */,
+				669EF9CA2BED07900071D6F8 /* Fixtures.swift */,
 			);
 			path = "craftbrew-designer-swiftuiTests";
 			sourceTree = "<group>";
@@ -125,6 +176,94 @@
 				669EF9AB2BEAB19E0071D6F8 /* craftbrew_designer_swiftuiUITestsLaunchTests.swift */,
 			);
 			path = "craftbrew-designer-swiftuiUITests";
+			sourceTree = "<group>";
+		};
+		669EF9BC2BECF98B0071D6F8 /* Calculators */ = {
+			isa = PBXGroup;
+			children = (
+				669EF9BA2BECF2C40071D6F8 /* SpecificGravity.swift */,
+				669EF9BD2BECF9B20071D6F8 /* Color.swift */,
+				669EF9C12BECFA2F0071D6F8 /* Abv.swift */,
+				669EF9C82BED06010071D6F8 /* Bitterness.swift */,
+			);
+			path = Calculators;
+			sourceTree = "<group>";
+		};
+		669EF9CE2BED08360071D6F8 /* Calculators */ = {
+			isa = PBXGroup;
+			children = (
+				669EF9CC2BED07E20071D6F8 /* ColorTests.swift */,
+				669EF99F2BEAB19E0071D6F8 /* SpecificGravityTests.swift */,
+				669EF9CF2BED08540071D6F8 /* AbvTests.swift */,
+				669EF9D12BED08AD0071D6F8 /* BitternessTests.swift */,
+			);
+			path = Calculators;
+			sourceTree = "<group>";
+		};
+		669EF9D72BED15510071D6F8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				669EF9E32BED1F9E0071D6F8 /* Settings */,
+				669EF9E02BED1F780071D6F8 /* Explore */,
+				669EF9DD2BED1F4F0071D6F8 /* Recipes */,
+				669EF9DC2BED1F440071D6F8 /* Design */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		669EF9DC2BED1F440071D6F8 /* Design */ = {
+			isa = PBXGroup;
+			children = (
+				669EF9B82BEABBC80071D6F8 /* DesignView.swift */,
+				669EF9D52BED11150071D6F8 /* BuildFromStyle.swift */,
+				669EF9D82BED157A0071D6F8 /* DesignHomeView.swift */,
+				669EF9DA2BED1EC10071D6F8 /* BuildFromRecipe.swift */,
+			);
+			path = Design;
+			sourceTree = "<group>";
+		};
+		669EF9DD2BED1F4F0071D6F8 /* Recipes */ = {
+			isa = PBXGroup;
+			children = (
+				669EF9DE2BED1F5E0071D6F8 /* RecipesView.swift */,
+			);
+			path = Recipes;
+			sourceTree = "<group>";
+		};
+		669EF9E02BED1F780071D6F8 /* Explore */ = {
+			isa = PBXGroup;
+			children = (
+				669EF9E12BED1F880071D6F8 /* ExploreView.swift */,
+			);
+			path = Explore;
+			sourceTree = "<group>";
+		};
+		669EF9E32BED1F9E0071D6F8 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				669EF9E42BED1FAD0071D6F8 /* SettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		669EF9E62BED562C0071D6F8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				669EF9E72BED563C0071D6F8 /* Grain.swift */,
+				669EF9E92BED56570071D6F8 /* Hop.swift */,
+				669EF9EB2BED567B0071D6F8 /* Yeast.swift */,
+				669EF9ED2BED56950071D6F8 /* Recipe.swift */,
+				669EF9F52BED75710071D6F8 /* BeerStyle.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		669EF9F22BED75220071D6F8 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				669EF9F32BED75460071D6F8 /* DesignHomeViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,8 +396,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				669EF9F42BED75460071D6F8 /* DesignHomeViewModel.swift in Sources */,
+				669EF9D62BED11150071D6F8 /* BuildFromStyle.swift in Sources */,
+				669EF9E82BED563C0071D6F8 /* Grain.swift in Sources */,
+				669EF9DB2BED1EC10071D6F8 /* BuildFromRecipe.swift in Sources */,
+				669EF9D92BED157A0071D6F8 /* DesignHomeView.swift in Sources */,
+				669EF9C22BECFA2F0071D6F8 /* Abv.swift in Sources */,
 				669EF9912BEAB1930071D6F8 /* ContentView.swift in Sources */,
 				669EF98F2BEAB1930071D6F8 /* craftbrew_designer_swiftuiApp.swift in Sources */,
+				669EF9E52BED1FAD0071D6F8 /* SettingsView.swift in Sources */,
+				669EF9E22BED1F880071D6F8 /* ExploreView.swift in Sources */,
+				669EF9B92BEABBC80071D6F8 /* DesignView.swift in Sources */,
+				669EF9EA2BED56570071D6F8 /* Hop.swift in Sources */,
+				669EF9BE2BECF9B20071D6F8 /* Color.swift in Sources */,
+				669EF9C92BED06010071D6F8 /* Bitterness.swift in Sources */,
+				669EF9DF2BED1F5E0071D6F8 /* RecipesView.swift in Sources */,
+				669EF9EE2BED56950071D6F8 /* Recipe.swift in Sources */,
+				669EF9F62BED75710071D6F8 /* BeerStyle.swift in Sources */,
+				669EF9EC2BED567B0071D6F8 /* Yeast.swift in Sources */,
+				669EF9BB2BECF2C40071D6F8 /* SpecificGravity.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,7 +422,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				669EF9A02BEAB19E0071D6F8 /* craftbrew_designer_swiftuiTests.swift in Sources */,
+				669EF9A02BEAB19E0071D6F8 /* SpecificGravityTests.swift in Sources */,
+				669EF9D02BED08540071D6F8 /* AbvTests.swift in Sources */,
+				669EF9D22BED08AD0071D6F8 /* BitternessTests.swift in Sources */,
+				669EF9CD2BED07E20071D6F8 /* ColorTests.swift in Sources */,
+				669EF9CB2BED07900071D6F8 /* Fixtures.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -416,12 +576,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "craftbrew-designer-swiftui/craftbrew-designer-swiftui.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"craftbrew-designer-swiftui/Preview Content\"";
 				DEVELOPMENT_TEAM = 5G9F3P7M4L;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "craftbrew-designer-swiftui/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Build a Beer";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -432,7 +595,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.davevanfleet.craftbrew-designer-swiftui";
+				PRODUCT_BUNDLE_IDENTIFIER = app.buildabeer.buildabeer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -445,12 +608,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "craftbrew-designer-swiftui/craftbrew-designer-swiftui.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"craftbrew-designer-swiftui/Preview Content\"";
 				DEVELOPMENT_TEAM = 5G9F3P7M4L;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "craftbrew-designer-swiftui/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Build a Beer";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -461,7 +627,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.davevanfleet.craftbrew-designer-swiftui";
+				PRODUCT_BUNDLE_IDENTIFIER = app.buildabeer.buildabeer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

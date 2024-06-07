@@ -11,30 +11,39 @@ struct HopDetailView: View {
     let hop: Hop
     var body: some View {
         VStack {
+            Text("Typical Usages").font(.title2)
             HStack {
-                Text("Bittering Hop:")
+                Text("Bittering")
                     .fontWeight(.bold)
                 Spacer()
-                Text(String(hop.forBittering))
+                Image(systemName: hop.forBittering ? "checkmark.circle" : "x.circle")
+                    .foregroundColor(hop.forBittering ? Color.green : Color.red)
             }
             HStack {
-                Text("Flavoring Hop:")
+                Text("Flavoring")
                     .fontWeight(.bold)
                 Spacer()
-                Text(String(hop.forFlavor))
+                Image(systemName: hop.forFlavor ? "checkmark.circle" : "x.circle")
+                    .foregroundColor(hop.forFlavor ? Color.green : Color.red)
             }
             HStack {
-                Text("Aroma Hop:")
+                Text("Aroma")
                     .fontWeight(.bold)
                 Spacer()
-                Text(String(hop.forAroma))
+                Image(systemName: hop.forAroma ? "checkmark.circle" : "x.circle")
+                    .foregroundColor(hop.forAroma ? Color.green : Color.red)
             }
             HStack {
-                Text("Dry Hop:")
+                Text("Dry")
                     .fontWeight(.bold)
                 Spacer()
-                Text(String(hop.forDryHopping))
+                Image(systemName: hop.forDryHopping ? "checkmark.circle" : "x.circle")
+                    .foregroundColor(hop.forDryHopping ? Color.green : Color.red)
+                    
             }
+            
+            Text("Typical Alpha Acid").font(.title2)
+            Text("\(String(format: "%g", hop.minimumTypicalAlphaAcid))% - \(String(format: "%g", hop.maximumTypicalAlphaAcid))%")
             Spacer()
            
         }
@@ -44,5 +53,5 @@ struct HopDetailView: View {
 }
 
 #Preview {
-    HopDetailView(hop: Hop(id: 1, name: "Yakima Magnum", forAroma: false, forBittering: true, forDryHopping: false, forFlavor: false))
+    HopDetailView(hop: Hop(id: 1, name: "Yakima Magnum", forAroma: false, forBittering: true, forDryHopping: false, forFlavor: false, minimumTypicalAlphaAcid: 14.0, maximumTypicalAlphaAcid: 15.0))
 }

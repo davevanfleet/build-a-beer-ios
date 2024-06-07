@@ -8,11 +8,19 @@
 import SwiftUI
 
 struct RecipeBitternessView: View {
+    @Binding var recipeFormValues: RecipeFormValues
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        let estimatedBitterness = calculateEstimateBitterness(recipe: recipeFormValues)
+
+        HStack {
+            Text("Bitterness").font(.headline).fontWeight(.bold)
+            Spacer()
+            Text(String(estimatedBitterness))
+        }
     }
 }
 
 #Preview {
-    RecipeBitternessView()
+    RecipeBitternessView(recipeFormValues: .constant(RecipeFormValues()))
 }

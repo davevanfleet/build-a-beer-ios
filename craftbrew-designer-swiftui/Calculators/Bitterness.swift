@@ -7,13 +7,13 @@
 
 import Foundation
 
-func formatIbu (ibu: Float) -> Int {
+func formatIbu (ibu: Double) -> Int {
     return Int(round(ibu))
 }
 
-func calculateEstimateBitterness (recipe: Recipe) -> Int {
+func calculateEstimateBitterness (recipe: RecipeFormValues) -> Int {
     let estimatedOriginalGravity = calculateEstimatedOriginalGravity(recipe: recipe, brewhouseEfficiency: 0.80)
-    let estimatedIbu = recipe.recipeHops.reduce(Float(0)) { acc, recipeHop in
+    let estimatedIbu = recipe.recipeHops.reduce(Double(0)) { acc, recipeHop in
         let mgPerLofAddedAlphaAcids = ((recipeHop.alphaAcidPercent / 100) * recipeHop.weightInOunces * 7490) / recipe.postBoilGallons;
         let bignessFactor = 1.65 * pow(0.000125, (estimatedOriginalGravity - 1));
         let boilTimeFactor = ((1 - exp(-0.04 * recipeHop.boilTimeMinutes))) / 4.15;

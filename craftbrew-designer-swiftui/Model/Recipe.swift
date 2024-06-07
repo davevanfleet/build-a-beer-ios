@@ -7,24 +7,37 @@
 
 import Foundation
 
-struct Recipe {
+struct Recipe: Decodable, Identifiable {
     let id: Int
     let name: String
     let description: String
-    let postBoilGallons: Float
+    let postBoilGallons: Double
+    var recipeMaltExtracts: [RecipeMaltExtract]?
     let recipeGrains: [RecipeGrain]
     let recipeHops: [RecipeHop]
     let yeast: Yeast
+    
+    var recipeFormValues: RecipeFormValues {
+        RecipeFormValues(postBoilGallons: self.postBoilGallons, recipeMaltExtracts: self.recipeMaltExtracts ?? [], recipeGrains: self.recipeGrains, recipeHops: self.recipeHops, yeast: self.yeast)
+    }
 }
 
-struct RecipeGrain {
-    let grain: Grain
-    let weightInPounds: Float
+struct RecipeGrain: Decodable, Identifiable {
+    var id = UUID()
+    var grain: Grain
+    var weightInPounds: Double
 }
 
-struct RecipeHop {
+struct RecipeMaltExtract: Decodable, Identifiable {
+    var id = UUID()
+    var maltExtract: MaltExtract
+    var weightInPounds: Double
+}
+
+struct RecipeHop: Decodable, Identifiable {
+    var id = UUID()
     let hop: Hop
-    let weightInOunces: Float
-    let alphaAcidPercent: Float
-    let boilTimeMinutes: Float
+    let weightInOunces: Double
+    let alphaAcidPercent: Double
+    let boilTimeMinutes: Double
 }

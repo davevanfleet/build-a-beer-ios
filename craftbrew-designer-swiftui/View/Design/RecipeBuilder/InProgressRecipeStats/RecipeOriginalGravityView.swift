@@ -7,22 +7,22 @@
 
 import SwiftUI
 
-struct RecipeGravityView: View {
+struct RecipeOriginalGravityView: View {
+    @Environment(AppSettingsStore.self) var appSettingsStore
+    
     @Binding var recipeFormValues: RecipeFormValues
         
     var body: some View {
-        let brewhouseEfficiency = 0.75
-        let estimatedOriginalGravity = calculateEstimatedOriginalGravity(recipe: recipeFormValues, brewhouseEfficiency: brewhouseEfficiency)
-        let estimatedFinalGravity = calculateEstimatedFinalGravity(recipe: recipeFormValues, brewhouseEfficiency: brewhouseEfficiency)
+        let estimatedOriginalGravity = calculateEstimatedOriginalGravity(recipe: recipeFormValues, brewhouseEfficiency: appSettingsStore.appSettings.brewhouseEfficiency)
         
         HStack {
-            Text("Original Gravity").font(.title3).fontWeight(.bold)
+            Text("Original Gravity").font(.headline).fontWeight(.bold)
             Spacer()
-            Text(String(estimatedOriginalGravity))
+            Text(String(format: "%.3f", estimatedOriginalGravity))
         }
     }
 }
 
 #Preview {
-    RecipeGravityView(recipeFormValues: .constant(RecipeFormValues()))
+    RecipeOriginalGravityView(recipeFormValues: .constant(RecipeFormValues()))
 }

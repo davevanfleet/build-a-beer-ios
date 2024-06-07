@@ -7,7 +7,18 @@
 
 import Foundation
 
-struct Hop {
+struct Hop: Decodable, Identifiable, Hashable {
     let id: Int
     let name: String
+    let forAroma: Bool
+    let forBittering: Bool
+    let forDryHopping: Bool
+    let forFlavor: Bool
+    let minimumTypicalAlphaAcid: Double
+    let maximumTypicalAlphaAcid: Double
+    var averageAlphaAcid: Double {
+        get {
+            return (minimumTypicalAlphaAcid + maximumTypicalAlphaAcid) / 2
+        }
+    }
 }

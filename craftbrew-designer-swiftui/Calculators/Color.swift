@@ -7,10 +7,16 @@
 
 import Foundation
 
-func calculateEstimatedColor (recipe: Recipe) -> Int {
-    let estimatedSrm = recipe.recipeGrains.reduce(Float(0)){ acc, recipeGrain in
+func calculateEstimatedColor (recipe: RecipeFormValues) -> Int {
+    let estimatedSrmFromExtracts = recipe.recipeMaltExtracts.reduce(Double(0)){ acc, recipeMaltExtract in
+        let srmContribution = recipeMaltExtract.maltExtract.lovibond * (recipeMaltExtract.weightInPounds / recipe.postBoilGallons)
+        return acc + srmContribution
+    }
+    
+    let estimatedSrmFromGrains = recipe.recipeGrains.reduce(Double(0)){ acc, recipeGrain in
         let srmContribution = recipeGrain.grain.lovibond * (recipeGrain.weightInPounds / recipe.postBoilGallons)
         return acc + srmContribution
     }
-    return Int(round(estimatedSrm))
+    
+    return Int(round(estimatedSrmFromGrains))
 }

@@ -7,9 +7,11 @@
 
 import Foundation
 
-struct Grain {
+struct Grain: Decodable, Identifiable, Hashable {
     let id: Int
     let name: String
-    let lovibond: Float
-    let fineGrindDryBasisPercentage: Float
+    let lovibond: Double
+    let fineGrindDryBasisPercentage: Double
+    let suggestedMaximumUsage: Int
+    let maltster: String
 }

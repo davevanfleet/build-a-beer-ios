@@ -7,20 +7,23 @@
 
 import SwiftUI
 
-struct RecipeABVView: View {
-    @Binding var recipeFormValues: RecipeFormValues
+struct RecipeFinalGravityView: View {
+    @Environment(AppSettingsStore.self) var appSettingsStore
     
+    @Binding var recipeFormValues: RecipeFormValues
+        
     var body: some View {
-        let estimatedAbv = calculateAbv(recipe: recipeFormValues)
-
+        let estimatedFinalGravity = calculateEstimatedFinalGravity(recipe: recipeFormValues, brewhouseEfficiency: appSettingsStore.appSettings.brewhouseEfficiency)
+        let estimatedAbv = calculateAbv(recipe: recipeFormValues, brewhouseEfficiency: appSettingsStore.appSettings.brewhouseEfficiency)
+        
         HStack {
-            Text("ABV").font(.title3).fontWeight(.bold)
+            Text("Final Gravity").font(.headline).fontWeight(.bold)
             Spacer()
-            Text(String(estimatedAbv))
+            Text("\(String(format: "%.3f", estimatedFinalGravity)) (\(String(format: "%.1f", estimatedAbv)) ABV)")
         }
     }
 }
 
 #Preview {
-    RecipeABVView(recipeFormValues: .constant(RecipeFormValues()))
+    RecipeFinalGravityView(recipeFormValues: .constant(RecipeFormValues()))
 }

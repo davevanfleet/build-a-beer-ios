@@ -8,11 +8,21 @@
 import SwiftUI
 
 struct InProgressRecipeStatsView: View {
+    @Binding var recipeFormValues: RecipeFormValues
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack(alignment: .top) {
+            RecipeColorView(recipeFormValues: $recipeFormValues)
+            
+            RecipeBitternessView(recipeFormValues: $recipeFormValues)
+            
+            RecipeGravityView(recipeFormValues: $recipeFormValues)
+    
+            RecipeABVView(recipeFormValues: $recipeFormValues)
+        }
     }
 }
 
 #Preview {
-    InProgressRecipeStatsView()
+    InProgressRecipeStatsView(recipeFormValues: .constant(RecipeFormValues()))
 }

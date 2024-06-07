@@ -6,3 +6,14 @@
 //
 
 import Foundation
+
+enum BrewingMethod: Codable {
+    case extract
+    case allGrain
+}
+
+struct AppSettings: Codable {
+    var brewingMethod = BrewingMethod.allGrain
+    var batchSize = 5.0
+    var brewhouseEfficiency = 0.75
+}

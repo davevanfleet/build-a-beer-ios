@@ -9,7 +9,7 @@ import SwiftUI
 
 struct BuildFromStyle: View {
     var body: some View {
-        Text("BuildFromStyle")
+        RecipeBuilderView()
     }
 }
 

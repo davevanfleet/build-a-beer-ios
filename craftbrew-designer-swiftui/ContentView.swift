@@ -8,16 +8,17 @@
 import SwiftUI
 
 struct ContentView: View {
+  
     var body: some View {
         TabView() {
             DesignView()
                 .tabItem {
-                    Label("Design", systemImage: "pencil")
+                    Label("Design", systemImage: "hammer")
                 }
-            RecipesView()
-                .tabItem {
-                    Label("Recipes", systemImage: "book")
-                }
+//            RecipesView()
+//                .tabItem {
+//                    Label("Recipes", systemImage: "book")
+//                }
             ExploreView()
                 .tabItem {
                     Label("Explore", systemImage: "magnifyingglass")
@@ -27,6 +28,8 @@ struct ContentView: View {
                     Label("Settings", systemImage: "gearshape")
                 }
         }
+        .environment(ContentViewModel())
+        .environment(AppSettingsStore())
     }
 }
 

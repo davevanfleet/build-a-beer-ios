@@ -7,9 +7,9 @@
 
 import Foundation
 
-func calculateAbv (recipe: Recipe) -> Float {
-    let estimatedOriginalGravity = calculateEstimatedOriginalGravity(recipe: recipe, brewhouseEfficiency: 0.80);
-    let estimatedFinalGravity = calculateEstimatedFinalGravity(recipe: recipe, brewhouseEfficiency: 0.80);
+func calculateAbv (recipe: RecipeFormValues, brewhouseEfficiency: Double) -> Double {
+    let estimatedOriginalGravity = calculateEstimatedOriginalGravity(recipe: recipe, brewhouseEfficiency: brewhouseEfficiency);
+    let estimatedFinalGravity = calculateEstimatedFinalGravity(recipe: recipe, brewhouseEfficiency: brewhouseEfficiency);
     let abv = (estimatedOriginalGravity - estimatedFinalGravity) * 131.25
     return round(abv * 10) / 10
 }

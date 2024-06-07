@@ -7,11 +7,11 @@
 
 import Foundation
 
-struct Yeast {
+struct Yeast: Decodable, Identifiable, Hashable {
     let id: Int
     let name: String
     let minimumTemperature: Int
     let maximumTemperature: Int
-    let fermentation: Int
-    let attenuation: Float
+    let fermentation: String
+    let attenuation: Double
 }

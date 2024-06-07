@@ -10,6 +10,7 @@ import Foundation
 struct BeerStyle: Decodable, Identifiable {
     let id: Int
     let name: String
+    let imageUrl: String
     let overallImpression: String
     let appearanceDescription: String
     let aromaDescription: String
@@ -21,12 +22,13 @@ struct BeerStyle: Decodable, Identifiable {
     let ibuMaximum: Int
     let srmMinimum: Int
     let srmMaximum: Int
-    let originalGravityMinimum: Float
-    let originalGravityMaximum: Float
-    let finalGravityMinimum: Float
-    let finalGravityMaximum: Float
-    let abvMinimum: Float
-    let abvMaximum: Float
-    let fermentation: Int
+    let originalGravityMinimum: Double
+    let originalGravityMaximum: Double
+    let finalGravityMinimum: Double
+    let finalGravityMaximum: Double
+    let abvMinimum: Double
+    let abvMaximum: Double
+    let fermentation: String
     let bjcpCode: String
+    let sampleRecipe: Recipe?
 }

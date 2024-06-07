@@ -7,33 +7,42 @@
 
 import Foundation
 
-func formatSpecificGravity (specificGravity: Float) -> Float {
+func formatSpecificGravity (specificGravity: Double) -> Double {
     return round(specificGravity * 1000) / 1000
 }
 
-func gravityUnitsToSpecificGravity (gravityUnits: Float) -> Float {
+func gravityUnitsToSpecificGravity (gravityUnits: Double) -> Double {
     return formatSpecificGravity(specificGravity: gravityUnits / 1000 + 1)
 }
 
-func calculatePotentialOriginalGravity (recipe: Recipe) -> Float {
-    let gravityUnits = recipe.recipeGrains.reduce(Float(0)){ acc, recipeGrain in
+func calculatePotentialOriginalGravity (recipe: RecipeFormValues) -> Double {
+    let gravityUnitsFromExtracts = recipe.recipeMaltExtracts.reduce(Double(0)){ acc, recipeMaltExtract in
+       let pointsPerPoundPerGallon = recipeMaltExtract.maltExtract.fermentabilityPercentage * 46
+       let gravityUnits = pointsPerPoundPerGallon * recipeMaltExtract.weightInPounds;
+       return acc + gravityUnits
+    } / recipe.postBoilGallons
+    
+    let gravityUnitsFromGrains = recipe.recipeGrains.reduce(Double(0)){ acc, recipeGrain in
        let pointsPerPoundPerGallon = recipeGrain.grain.fineGrindDryBasisPercentage * 46
        let gravityUnits = pointsPerPoundPerGallon * recipeGrain.weightInPounds;
        return acc + gravityUnits
     } / recipe.postBoilGallons
     
-    return gravityUnitsToSpecificGravity(gravityUnits: gravityUnits)
+    return gravityUnitsToSpecificGravity(gravityUnits: gravityUnitsFromExtracts + gravityUnitsFromGrains)
 }
 
-func calculateEstimatedOriginalGravity (recipe: Recipe, brewhouseEfficiency: Float) -> Float {
+func calculateEstimatedOriginalGravity (recipe: RecipeFormValues, brewhouseEfficiency: Double) -> Double {
     let potentialOriginalGravity = calculatePotentialOriginalGravity(recipe: recipe);
     let potentialGravityUnits = (potentialOriginalGravity - 1) * 1000
     let estimatedGravityUnits = potentialGravityUnits * brewhouseEfficiency;
     return gravityUnitsToSpecificGravity(gravityUnits: estimatedGravityUnits)
 }
 
-func calculateEstimatedFinalGravity (recipe: Recipe, brewhouseEfficiency: Float) -> Float {
+func calculateEstimatedFinalGravity (recipe: RecipeFormValues, brewhouseEfficiency: Double) -> Double {
     let estimatedOriginalGravity = calculateEstimatedOriginalGravity(recipe: recipe, brewhouseEfficiency: brewhouseEfficiency);
-    let estimatedFinalGravity = estimatedOriginalGravity - (estimatedOriginalGravity - 1) * recipe.yeast.attenuation
+    guard recipe.yeast != nil else {
+        return estimatedOriginalGravity
+    }
+    let estimatedFinalGravity = estimatedOriginalGravity - (estimatedOriginalGravity - 1) * recipe.yeast!.attenuation
     return formatSpecificGravity(specificGravity: estimatedFinalGravity);
 }

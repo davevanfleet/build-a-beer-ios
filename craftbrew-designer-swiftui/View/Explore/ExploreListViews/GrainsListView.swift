@@ -15,7 +15,7 @@ struct GrainsListView: View {
         @Bindable var viewModel: ContentViewModel = self.viewModel
         
         List(searchResults) {grain in
-            NavigationLink("\(grain.maltster) \(grain.name)") {
+            NavigationLink("\(grain.name) (\(grain.maltster) )") {
                 GrainDetailView(grain: grain)
             }
         }

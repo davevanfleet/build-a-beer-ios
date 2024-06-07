@@ -21,17 +21,17 @@ class SpecificGravityExtractRecipeTests: XCTestCase {
     
     func testPotentialOriginalGravityCalculator() {
         let result = calculatePotentialOriginalGravity(recipe: recipe)
-        XCTAssertEqual(result, 1.069)
+        XCTAssertEqual(result, 1.064)
     }
     
     func testEstimatedOriginalGravityCalculator() {
         let result = calculateEstimatedOriginalGravity(recipe: recipe, brewhouseEfficiency: 0.80)
-        XCTAssertEqual(result, 1.055)
+        XCTAssertEqual(result, 1.051)
     }
     
     func testEstimatedFinalGravityCalculator() {
         let result = calculateEstimatedFinalGravity(recipe: recipe, brewhouseEfficiency: 0.80)
-        XCTAssertEqual(result, 1.014)
+        XCTAssertEqual(result, 1.013)
     }
 
 }

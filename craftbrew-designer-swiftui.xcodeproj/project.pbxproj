@@ -34,6 +34,7 @@
 		662DB0312C138C0D0089D80C /* ColorExtractTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662DB0302C138C0D0089D80C /* ColorExtractTest.swift */; };
 		662DB0332C138C370089D80C /* AbvExtractTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662DB0322C138C370089D80C /* AbvExtractTest.swift */; };
 		662DB0352C138C530089D80C /* BitternessExtractTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662DB0342C138C530089D80C /* BitternessExtractTest.swift */; };
+		662DB0372C14A4B40089D80C /* AddExtractsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662DB0362C14A4B40089D80C /* AddExtractsView.swift */; };
 		669EF98F2BEAB1930071D6F8 /* craftbrew_designer_swiftuiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669EF98E2BEAB1930071D6F8 /* craftbrew_designer_swiftuiApp.swift */; };
 		669EF9912BEAB1930071D6F8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669EF9902BEAB1930071D6F8 /* ContentView.swift */; };
 		669EF9932BEAB19D0071D6F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 669EF9922BEAB19D0071D6F8 /* Assets.xcassets */; };
@@ -108,6 +109,7 @@
 		662DB0302C138C0D0089D80C /* ColorExtractTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtractTest.swift; sourceTree = "<group>"; };
 		662DB0322C138C370089D80C /* AbvExtractTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbvExtractTest.swift; sourceTree = "<group>"; };
 		662DB0342C138C530089D80C /* BitternessExtractTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitternessExtractTest.swift; sourceTree = "<group>"; };
+		662DB0362C14A4B40089D80C /* AddExtractsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExtractsView.swift; sourceTree = "<group>"; };
 		669EF98B2BEAB1930071D6F8 /* craftbrew-designer-swiftui.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "craftbrew-designer-swiftui.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		669EF98E2BEAB1930071D6F8 /* craftbrew_designer_swiftuiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = craftbrew_designer_swiftuiApp.swift; sourceTree = "<group>"; };
 		669EF9902BEAB1930071D6F8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -197,6 +199,7 @@
 				660B76EF2C05059000BAC19F /* AddGrainsView.swift */,
 				660B76F12C0505A600BAC19F /* AddHopsView.swift */,
 				660B76F32C0505B700BAC19F /* AddYeastView.swift */,
+				662DB0362C14A4B40089D80C /* AddExtractsView.swift */,
 			);
 			path = RecipeBuilder;
 			sourceTree = "<group>";
@@ -522,6 +525,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				662DB0372C14A4B40089D80C /* AddExtractsView.swift in Sources */,
 				669EF9D62BED11150071D6F8 /* BuildFromStyle.swift in Sources */,
 				669EF9E82BED563C0071D6F8 /* Grain.swift in Sources */,
 				662DB0212C091C610089D80C /* RecipeBitternessView.swift in Sources */,
@@ -748,7 +752,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.1;
+				MARKETING_VERSION = 1.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = app.buildabeer.buildabeer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -785,7 +789,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.1;
+				MARKETING_VERSION = 1.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = app.buildabeer.buildabeer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

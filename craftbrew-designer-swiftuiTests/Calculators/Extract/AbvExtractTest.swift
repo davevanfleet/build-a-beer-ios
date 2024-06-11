@@ -21,6 +21,6 @@ class AbvExtractTests: XCTestCase {
     
     func testAbvCalculator() {
         let result = calculateAbv(recipe: recipe, brewhouseEfficiency: 0.80)
-        XCTAssertEqual(result, 5.0)
+        XCTAssertEqual(result, 6.2)
     }
 }

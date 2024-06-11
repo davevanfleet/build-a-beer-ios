@@ -37,7 +37,7 @@ struct RecipeMaltExtract: Decodable, Identifiable {
 struct RecipeHop: Decodable, Identifiable {
     var id = UUID()
     let hop: Hop
-    let weightInOunces: Double
+    var weightInOunces: Double
     let alphaAcidPercent: Double
     let boilTimeMinutes: Double
 }

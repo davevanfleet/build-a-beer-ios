@@ -26,6 +26,12 @@ struct RecipeBuilderView: View {
     
     @State var recipeFormValues = RecipeFormValues()
     
+    @State private var showSettingsSheet = false
+    
+    func removeRecipeMaltExtract(id: UUID) {
+        self.recipeFormValues.recipeMaltExtracts = self.recipeFormValues.recipeMaltExtracts.filter { $0.id != id}
+    }
+    
     func removeRecipeGrain(id: UUID) {
         self.recipeFormValues.recipeGrains = self.recipeFormValues.recipeGrains.filter { $0.id != id}
     }
@@ -54,11 +60,15 @@ struct RecipeBuilderView: View {
     }
     
     var body: some View {
+        let brewingMethod = appSettingsStore.appSettings.brewingMethod
         Form {
             Text("New \(format(brewingMethod: appSettingsStore.appSettings.brewingMethod)) recipe for a \(String(format: "%g", recipeFormValues.postBoilGallons)) gallon batch").onAppear{
                 recipeFormValues.postBoilGallons = appSettingsStore.appSettings.batchSize
             }
-            if recipeFormValues.isValidRecipe {
+            Button("Change Brewing Preferences") {
+                self.showSettingsSheet = true
+            }
+            if recipeFormValues.isValidRecipe && matchingStyles.count > 0 {
                 VStack(alignment: .leading) {
                     Text("Possible Style Matches")
                         .font(.headline).fontWeight(.bold)
@@ -67,6 +77,32 @@ struct RecipeBuilderView: View {
                             Text(beerStyle.name)
                         }
                     }
+                }
+            }
+            
+            if brewingMethod == .extract {
+                Section {
+                    NavigationLink("Add Extract") {
+                        AddExtractsView(recipeFormValues: $recipeFormValues)
+                    }.tint(.accentColor)
+                    List{
+                        ForEach(recipeFormValues.recipeMaltExtracts.sorted {$0.weightInPounds > $1.weightInPounds}) { recipeMaltExtract in
+                            NavigationLink(destination: AddExtractsView(recipeFormValues: $recipeFormValues, selectedRecipeMaltExtract: recipeMaltExtract)) {
+                                VStack(alignment: .leading) {
+                                    Text("\(recipeMaltExtract.maltExtract.maltster) \(recipeMaltExtract.maltExtract.name)")
+                                    Text("\(String(format: "%g", recipeMaltExtract.weightInPounds)) lbs")
+                                }
+                            }.swipeActions(edge: .trailing) {
+                                Button(role: .destructive) {
+                                    removeRecipeMaltExtract(id: recipeMaltExtract.id)
+                                } label: {
+                                    Label("Remove", systemImage: "trash.fill")
+                                }
+                            }
+                        }
+                    }
+                } header: {
+                    Text("Extracts")
                 }
             }
             
@@ -93,7 +129,7 @@ struct RecipeBuilderView: View {
                     RecipeOriginalGravityView(recipeFormValues: $recipeFormValues)
                 }
             } header: {
-                Text("Grains")
+                Text(brewingMethod == .extract ? "Specialty Grains" : "Grains")
             }
             
                           
@@ -150,7 +186,31 @@ struct RecipeBuilderView: View {
             
         }
         .navigationTitle("New Recipe")
-        
+        .sheet(isPresented: $showSettingsSheet) {
+            SettingsView()
+        }
+        .onChange(of: appSettingsStore.appSettings.batchSize) {
+            let adjustmentRatio = appSettingsStore.appSettings.batchSize / self.recipeFormValues.postBoilGallons
+            
+            self.recipeFormValues.recipeMaltExtracts = self.recipeFormValues.recipeMaltExtracts.map { recipeMaltExtract in
+                return RecipeMaltExtract(maltExtract: recipeMaltExtract.maltExtract, weightInPounds: recipeMaltExtract.weightInPounds * adjustmentRatio)
+            }
+            
+            self.recipeFormValues.recipeGrains = self.recipeFormValues.recipeGrains.map { recipeGrain in
+                return RecipeGrain(grain: recipeGrain.grain, weightInPounds: recipeGrain.weightInPounds * adjustmentRatio)
+            }
+            
+            self.recipeFormValues.recipeHops = self.recipeFormValues.recipeHops.map { recipeHop in
+                return RecipeHop(hop: recipeHop.hop, weightInOunces: recipeHop.weightInOunces * adjustmentRatio, alphaAcidPercent: recipeHop.alphaAcidPercent, boilTimeMinutes: recipeHop.boilTimeMinutes)
+            }
+            
+            self.recipeFormValues.postBoilGallons = appSettingsStore.appSettings.batchSize
+        }
+        .onChange(of: appSettingsStore.appSettings.brewingMethod) {
+            if appSettingsStore.appSettings.brewingMethod == .allGrain {
+                self.recipeFormValues.recipeMaltExtracts = []
+            }
+        }
     }
     
     enum StyleMatchParam {

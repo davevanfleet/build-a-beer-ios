@@ -21,7 +21,7 @@ class SpecificGravityTests: XCTestCase {
     
     func testPotentialOriginalGravityCalculator() {
         let result = calculatePotentialOriginalGravity(recipe: recipe)
-        XCTAssertEqual(result, 1.069)
+        XCTAssertEqual(result.potentialGravity, 1.069)
     }
     
     func testEstimatedOriginalGravityCalculator() {

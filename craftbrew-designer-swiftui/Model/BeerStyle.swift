@@ -31,4 +31,5 @@ struct BeerStyle: Decodable, Identifiable {
     let fermentation: String
     let bjcpCode: String
     let sampleRecipe: Recipe?
+    let sampleExtractRecipe: Recipe?
 }

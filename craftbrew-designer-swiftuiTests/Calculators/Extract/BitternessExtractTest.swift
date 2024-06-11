@@ -21,6 +21,6 @@ class BitternessExtractTests: XCTestCase {
     
     func testEstimateBitternessCalculator() {
         let result = calculateEstimateBitterness(recipe: recipe)
-        XCTAssertEqual(result, 22)
+        XCTAssertEqual(result, 20)
     }
 }

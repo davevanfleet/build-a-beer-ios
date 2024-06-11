@@ -15,8 +15,8 @@ func gravityUnitsToSpecificGravity (gravityUnits: Double) -> Double {
     return formatSpecificGravity(specificGravity: gravityUnits / 1000 + 1)
 }
 
-func calculatePotentialOriginalGravity (recipe: RecipeFormValues) -> Double {
-    let gravityUnitsFromExtracts = recipe.recipeMaltExtracts.reduce(Double(0)){ acc, recipeMaltExtract in
+func calculatePotentialOriginalGravity (recipe: RecipeFormValues) -> (potentialGravity: Double, gravityUnitsFromGrains: Double, gravityUnitsFromExtractsAndOtherFermentables: Double) {
+    let gravityUnitsFromExtractsAndOtherFermentables = recipe.recipeMaltExtracts.reduce(Double(0)){ acc, recipeMaltExtract in
        let pointsPerPoundPerGallon = recipeMaltExtract.maltExtract.fermentabilityPercentage * 46
        let gravityUnits = pointsPerPoundPerGallon * recipeMaltExtract.weightInPounds;
        return acc + gravityUnits
@@ -28,14 +28,13 @@ func calculatePotentialOriginalGravity (recipe: RecipeFormValues) -> Double {
        return acc + gravityUnits
     } / recipe.postBoilGallons
     
-    return gravityUnitsToSpecificGravity(gravityUnits: gravityUnitsFromExtracts + gravityUnitsFromGrains)
+    return (potentialGravity: gravityUnitsToSpecificGravity(gravityUnits: gravityUnitsFromExtractsAndOtherFermentables + gravityUnitsFromGrains), gravityUnitsFromGrains: gravityUnitsFromGrains, gravityUnitsFromExtractsAndOtherFermentables: gravityUnitsFromExtractsAndOtherFermentables)
 }
 
 func calculateEstimatedOriginalGravity (recipe: RecipeFormValues, brewhouseEfficiency: Double) -> Double {
-    let potentialOriginalGravity = calculatePotentialOriginalGravity(recipe: recipe);
-    let potentialGravityUnits = (potentialOriginalGravity - 1) * 1000
-    let estimatedGravityUnits = potentialGravityUnits * brewhouseEfficiency;
-    return gravityUnitsToSpecificGravity(gravityUnits: estimatedGravityUnits)
+    let potentialOriginalGravityData = (calculatePotentialOriginalGravity(recipe: recipe));
+    let estimatedGravityUnitsFromGrains = potentialOriginalGravityData.gravityUnitsFromGrains * brewhouseEfficiency;
+    return gravityUnitsToSpecificGravity(gravityUnits: estimatedGravityUnitsFromGrains + potentialOriginalGravityData.gravityUnitsFromExtractsAndOtherFermentables)
 }
 
 func calculateEstimatedFinalGravity (recipe: RecipeFormValues, brewhouseEfficiency: Double) -> Double {

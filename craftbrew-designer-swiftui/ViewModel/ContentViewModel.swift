@@ -10,6 +10,7 @@ import Foundation
 @Observable
 class ContentViewModel {
     var grains: [Grain] = []
+    var maltExtracts: [MaltExtract] = []
     var hops: [Hop] = []
     var yeasts: [Yeast] = []
     var beerStyles: [BeerStyle] = []
@@ -18,6 +19,7 @@ class ContentViewModel {
     
     init() {
         self.fetchGrains()
+        self.fetchMaltExtracts()
         self.fetchHops()
         self.fetchYeasts()
         self.fetchBeerStyles()
@@ -37,6 +39,25 @@ class ContentViewModel {
             
             DispatchQueue.main.async {
                 self.grains = grains ?? []
+                self.isLoading = false
+            }
+        }.resume()
+    }
+    
+    func fetchMaltExtracts() {
+        self.isLoading = true
+        guard let url = URL(string: "https://buildabeer.app/api/MaltExtracts?sort=%5B%22name%22%2C%22ASC%22%5D") else { return }
+        
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            guard let data = data, error == nil else {
+                self.isLoading = false
+                return
+            }
+            
+            let maltExtracts = try? JSONDecoder().decode([MaltExtract].self, from: data)
+            
+            DispatchQueue.main.async {
+                self.maltExtracts = maltExtracts ?? []
                 self.isLoading = false
             }
         }.resume()

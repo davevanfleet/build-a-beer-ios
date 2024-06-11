@@ -110,6 +110,7 @@ struct RecipeColorView: View {
         HStack {
             Text("Color").font(.headline).fontWeight(.bold)
             Spacer()
+            Text(String(estimatedColor))
             Circle().strokeBorder(/*@START_MENU_TOKEN@*/Color.black/*@END_MENU_TOKEN@*/).fill(srmToColor(srm: estimatedColor)).frame(width: 25, height: 25)
         }
     }

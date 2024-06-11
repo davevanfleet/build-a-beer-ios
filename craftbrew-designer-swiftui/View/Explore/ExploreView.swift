@@ -15,17 +15,10 @@ enum ExploreCategory {
 }
 
 struct ExploreView: View {
-    @State var category = ExploreCategory.grains
+    @State var category = ExploreCategory.beerStyle
     var body: some View {
         NavigationStack {
             VStack {
-//                if category == .grains {
-//                    GrainsListView()
-//                } else if category == .hops {
-//                    HopsListView()
-//                } else if category == .yeasts  {
-//                    YeastsListView()
-//                }
                 switch category {
                 case .grains:
                     GrainsListView()
@@ -40,10 +33,10 @@ struct ExploreView: View {
             .toolbar {
                 HStack {
                     Picker("Ingredient Type", selection: $category) {
+                        Text("Style").tag(ExploreCategory.beerStyle)
                         Text("Grains").tag(ExploreCategory.grains)
                         Text("Hops").tag(ExploreCategory.hops)
                         Text("Yeasts").tag(ExploreCategory.yeasts)
-                        Text("Style").tag(ExploreCategory.beerStyle)
                     }
                     .pickerStyle(.segmented)
                     .frame(idealWidth: UIScreen.main.bounds.width * 0.9)
